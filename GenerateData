@@ -1,0 +1,9 @@
+#include <vector>
+#include <string>
+using namespace std;
+
+
+
+vector<string> colors = {"Red", "Blue", "Purple", "Green", "Yellow", "Orange", "White", "Black", "Cyan", "Pink", "Brown", "Turquoise", "Beige"};
+vector<string> sizes;
+vector<string> shapes;
