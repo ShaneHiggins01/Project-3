@@ -5,6 +5,6 @@ class Star {
     private:
     string name;
     int mass;
-    float temperature;
-    pair<int, int> position;
+    pair<int, int> position; //0-24 right ascension, -90 - 90 declination
+    int distance; //5-100 in lightyears
 }
