@@ -8,6 +8,7 @@
 #include <iostream>
 #include <bits/stdc++.h>
 #include <chrono>
+#include <cmath>
 using namespace std;
 
 
@@ -41,14 +42,16 @@ void preGenData(vector<Star> &stars, BinaryTree &tree) {
     string input;
     bool selected = false;
     while(!selected) {
+
         cout << "How many Stars would you like to generate (up to 1,000,000)" << endl;
         cin >> input;
+
         //input = "10"; //DELETE
         if(checkIntInput(input)) {
             if(stoi(input) < 0 || stoi(input) > 10000000) {
                 invalidInput();
             } else {
-                stars = generateData(stoi(input));
+                stars = generateData(stoi(input), 5);
                 for(auto i : stars)
                 {
                     tree.InsertStar(tree.root, &i);
@@ -189,13 +192,13 @@ void preSearchDFS(BinaryTree tree) {
                 invalidInput();
             } else {
                 auto StartTime = chrono::high_resolution_clock::now();
-                resultNode = tree.DepthFirstSearch(tree.root, stof(input));
+                tree.DepthFirstSearchList(tree.root, stof(input), resultNodes);
                 auto EndTime = chrono::high_resolution_clock::now();
                 auto TimeTaken = std::chrono::duration_cast<std::chrono::milliseconds>(EndTime - StartTime); //This gives timetaken in milliseconds
                 cout << "Time taken to search: " << TimeTaken.count() << " miliseconds." << endl;
 
-                resultStar = resultNode->star;
-                resultStar->printStarInfo();
+                //resultStars = resultNodes->star;
+                //resultStars->printStarInfo();
                 selected = true;
             }
         } else {
@@ -217,7 +220,7 @@ int main() {
 
     string input;
     while (!quit){
-        
+
         cout << "1. Generate Star Dataset" << endl;
         cout << "2. Insert Custom Star" << endl;
         cout << "3. Search for specified mass with BFS" << endl;

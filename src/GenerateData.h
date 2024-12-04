@@ -2,4 +2,4 @@
 
 #include "Star.h"
 
-vector<Star> generateData(int numStars);
+vector<Star> generateData(int numStars, int seed);
