@@ -14,8 +14,13 @@ struct Node {
     }
 };
 
+bool BinaryTree::SameFloat(float f1, float f2)
+{
+    return (abs(f1 - f2) < 0.0001) //using < 0.0001 for floating point math
+}
+
 //Don't know if this works yet
-Node* BinaryTree::BreathFirstSearch(Star* root, float mass) //float mass is what we are looking for
+Node* BinaryTree::BreathFirstSearch(Node* root, float mass) //float mass is what we are looking for
 {
     if (root == nullptr)
         return;
@@ -24,7 +29,7 @@ Node* BinaryTree::BreathFirstSearch(Star* root, float mass) //float mass is what
     while (!q.empty()) {
         Node* node = q.front();
         q.pop(); 
-        if(abs(node->star.getMass() - mass < 0.0001)) //If the mass is what we're looking for, using < 0.0001 for floating point math
+        if(SameFloat(root->star->getMass(), mass)) //If the mass is what we're looking for
             return node;
         if (node->left != nullptr)
             q.push(node->left);
@@ -35,12 +40,12 @@ Node* BinaryTree::BreathFirstSearch(Star* root, float mass) //float mass is what
 }
 
 //Don't know if this works yet
-Node* BinaryTree::DepthFirstSearch(Star* root, float mass) //Literally just Inorder
+Node* BinaryTree::DepthFirstSearch(Node* root, float mass) //Literally just Inorder
 {
     if (root == nullptr) 
         return;
     DepthFirstSearch(root->left);
-    if(abs(root->star.getMass() - mass < 0.0001))
+    if(SameFloat(root->star->getMass(), mass))
         return node;
     DepthFirstSearch(root->right);
     return;
