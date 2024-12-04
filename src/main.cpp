@@ -43,7 +43,7 @@ void preGenData(vector<Star> &stars, BinaryTree &tree) {
         cout << "How many Stars would you like to generate (up to 1,000,000)" << endl;
         cin >> input;
         if(checkIntInput(input)) {
-            if(stoi(input) < 0 || stoi(input) > 1000000) {
+            if(stoi(input) < 0 || stoi(input) > 10000000) {
                 invalidInput();
             } else {
                 stars = generateData(stoi(input));
