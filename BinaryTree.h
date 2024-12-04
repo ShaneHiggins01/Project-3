@@ -15,6 +15,6 @@ public:
     bool SameFloat(float, float);
     Node* BreathFirstSearch(Node*, float);
     Node* DepthFirstSearch(Node*, float);
-    //TODO functions
-    //void insert();
+    Node* InsertStar(Node*, Star*);
+    Node* InsertStarVector(Node*, vector<Star>);
 };
