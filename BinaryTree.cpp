@@ -3,8 +3,7 @@
 
 using namespace std;
 
-class Node {
-public:
+struct Node {
     Star* star;
     Node* left, * right;
 
@@ -16,7 +15,7 @@ public:
 };
 
 //Don't know if this works yet
-void BreathFirstSearch(Star* root, float mass) //float mass is what we are looking for
+Node* BinaryTree::BreathFirstSearch(Star* root, float mass) //float mass is what we are looking for
 {
     if (root == nullptr)
         return;
@@ -32,5 +31,17 @@ void BreathFirstSearch(Star* root, float mass) //float mass is what we are looki
         if (node->right != nullptr)
             q.push(node->right);
     }
+    return;
+}
+
+//Don't know if this works yet
+Node* BinaryTree::DepthFirstSearch(Star* root, float mass) //Literally just Inorder
+{
+    if (root == nullptr) 
+        return;
+    DepthFirstSearch(root->left);
+    if(abs(root->star.getMass() - mass < 0.0001))
+        return node;
+    DepthFirstSearch(root->right);
     return;
 }
