@@ -1,12 +1,13 @@
 #pragma once
 
 #include "Star.h"
-#include "GenerateData.cpp"
 #include "BinaryTree.h"
+#include "printStar.h"
+#include "GenerateData.h"
+
 #include <iostream>
 #include <bits/stdc++.h>
 #include <chrono>
-#include "printStar.cpp"
 using namespace std;
 
 void invalidInput() {

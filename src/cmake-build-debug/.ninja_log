@@ -1,6 +1,8 @@
 # ninja log v5
-18	476	7550496239546262	CMakeFiles/src.dir/printStar.cpp.obj	e173e716fb2a3fd8
-9	515	7550496239927542	CMakeFiles/src.dir/GenerateData.cpp.obj	62c9cd23ca323a0d
+8	261	7550509100316914	CMakeFiles/src.dir/printStar.cpp.obj	e173e716fb2a3fd8
+6	274	7550506743181724	CMakeFiles/src.dir/GenerateData.cpp.obj	62c9cd23ca323a0d
 32	523	7550496240013842	CMakeFiles/src.dir/Star.cpp.obj	f95bff78e4338a80
 2	349	7550500344587445	CMakeFiles/src.dir/BinaryTree.cpp.obj	eba18ccb8006484e
-2	866	7550502251439455	CMakeFiles/src.dir/main.cpp.obj	386a9fc9054dbbcb
+2	812	7550509227857487	CMakeFiles/src.dir/main.cpp.obj	386a9fc9054dbbcb
+3	837	7550509937406980	CMakeFiles/src.dir/main.cpp.obj	386a9fc9054dbbcb
+837	934	7550509938349494	src.exe	bcf2e69c33d57907

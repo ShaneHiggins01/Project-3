@@ -119,7 +119,9 @@
 			"sourceIndexes" : 
 			[
 				1,
-				6
+				6,
+				7,
+				8
 			]
 		}
 	],
@@ -163,6 +165,16 @@
 		{
 			"backtrace" : 1,
 			"path" : "Star.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "printStar.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "GenerateData.h",
 			"sourceGroupIndex" : 1
 		}
 	],

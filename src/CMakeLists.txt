@@ -12,4 +12,6 @@ add_executable(src
         main.cpp
         printStar.cpp
         Star.cpp
-        Star.h)
+        Star.h
+        printStar.h
+        GenerateData.h)
