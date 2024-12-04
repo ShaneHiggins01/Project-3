@@ -3,12 +3,12 @@
 
 using namespace std;
 
-class BinaryTree {
+class Node {
 public:
     Star* star;
-    BinaryTree* left, * right;
+    Node* left, * right;
 
-    BinaryTree(Star* data) {
+    Node(Star* data) {
         star = data;
         left = nullptr;
         right = nullptr;
@@ -23,7 +23,7 @@ void BreathFirstSearch(Star* root, float mass) //float mass is what we are looki
     queue<Node*> q;
     q.push(root);
     while (!q.empty()) {
-        BinaryTree* node = q.front();
+        Node* node = q.front();
         q.pop(); 
         if(abs(node->star.getMass() - mass < 0.0001)) //If the mass is what we're looking for, using < 0.0001 for floating point math
             return node;
