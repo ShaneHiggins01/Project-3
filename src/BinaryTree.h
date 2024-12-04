@@ -20,6 +20,6 @@ public:
     bool SameFloat(float, float);
     Node* BreadthFirstSearch(Node*, float);
     Node* DepthFirstSearch(Node*, float);
-    Node* InsertStar(Node*, Star*);
+    void InsertStar(Node*, Star*);
     Node* InsertStarVector(Node*, vector<Star>);
 };
