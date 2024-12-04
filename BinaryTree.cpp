@@ -43,3 +43,17 @@ Node* BinaryTree::DepthFirstSearch(Node* root, float mass) //Literally just Inor
     DepthFirstSearch(root->right);
     return;
 }
+
+Node* BinaryTree::InsertStar(Node* root, Star* InsertedStar)
+{
+    if (root == nullptr)
+        return;
+    if (root->star->getMass() == InsertedStar->getMass)
+        return root; //If it already exists
+    
+    if (root->star->getMass() < InsertedStar->getMass)
+        root->right = insert(root->right, InsertedStar);
+    else
+        root->left = insert(root->left, InsertedStar);
+    return root;
+}
