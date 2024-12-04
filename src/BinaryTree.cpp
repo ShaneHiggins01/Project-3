@@ -15,7 +15,7 @@ bool BinaryTree::SameFloat(float f1, float f2)
 }
 
 //Don't know if this works yet
-Node* BinaryTree::BreathFirstSearch(Node* root, float mass) //float mass is what we are looking for
+Node* BinaryTree::BreadthFirstSearch(Node* root, float mass) //float mass is what we are looking for
 {
     if (root == nullptr)
         return;
