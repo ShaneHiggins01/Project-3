@@ -12,6 +12,7 @@ struct Node {
 };
 
 class BinaryTree {
+    Node* root;
 public:
     BinaryTree();
     bool SameFloat(float, float);
