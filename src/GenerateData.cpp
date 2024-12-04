@@ -19,7 +19,7 @@ vector<Star> generateData(int numStars) {
     vector<Star> stars;
     
     for(int i = 0; i < numStars; i++) {
-        srand(time(NULL));
+        srand(time(NULL)*i);
         int tmp = 0;
         string color;
         string size;
