@@ -2,6 +2,7 @@
 
 #include "BinaryTree.h"
 #include "Star.h"
+#include "iostream"
 #include <cmath>
 
 using namespace std;
@@ -115,4 +116,11 @@ Node* BinaryTree::InsertStarVector(Node* root, vector<Star> InsertedStars)
     for(auto i : InsertedStars){
         InsertStar(this->root, &i); // this->root ensures the insertion starts at the root node in the tree
     }
+}
+
+void BinaryTree::PrintInorder(Node* root)
+{
+    PrintInorder(root->left);
+    cout << root->star->getMass() << endl;
+    PrintInorder(root->right);
 }
