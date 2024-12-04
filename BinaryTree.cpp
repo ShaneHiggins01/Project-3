@@ -4,16 +4,8 @@
 
 using namespace std;
 
-struct Node {
-    Star* star;
-    Node* left, * right;
-
-    Node(Star* data) {
-        star = data;
-        left = nullptr;
-        right = nullptr;
-    }
-};
+BinaryTree::BinaryTree() {
+}
 
 bool BinaryTree::SameFloat(float f1, float f2)
 {
