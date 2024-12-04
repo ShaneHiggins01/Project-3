@@ -57,7 +57,7 @@ void BinaryTree::BreadthFirstSearchList(Node* root, float mass, vector<Node*> no
     }
 }
 
-
+/*
 Node* BinaryTree::DepthFirstSearch(Node* root, float mass) //Literally just Inorder
 {
     if (root == nullptr) 
@@ -68,6 +68,7 @@ Node* BinaryTree::DepthFirstSearch(Node* root, float mass) //Literally just Inor
     DepthFirstSearch(root->right, mass);
     return nullptr;
 }
+*/
 
 // An empty vector<Node*> list will be passed in, then push when found
 void BinaryTree::DepthFirstSearchList(Node* root, float mass, vector<Node*> nodeList)
