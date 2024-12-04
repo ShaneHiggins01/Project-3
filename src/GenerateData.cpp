@@ -3,6 +3,7 @@
 #include <string>
 #include <cstdlib>
 #include <time.h>
+#include <iostream>
 using namespace std;
 
 
@@ -16,8 +17,9 @@ vector<string> shapes = {"Flat", "Round", "Square"};
 
 vector<Star> generateData(int numStars) {
     vector<Star> stars;
-    srand(time(NULL));
+    
     for(int i = 0; i < numStars; i++) {
+        srand(time(NULL)*i);
         int tmp = 0;
         string color;
         string size;
@@ -44,7 +46,7 @@ vector<Star> generateData(int numStars) {
         name += shape;
         name += " ";
         name += "Star";
-        
+
         mass = (rand() % 801 + 5);
         mass /= 100 ; // 0.5 to 8 2 decimal places
         distance = rand() % 96 + 5; // 5 to 100

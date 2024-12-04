@@ -204,7 +204,6 @@ void preSearchDFS(BinaryTree tree) {
 }
 
 int main() {
-    
     vector<Star> stars;
     BinaryTree tree;
 
