@@ -4,7 +4,7 @@
 #include <queue>
 using namespace std;
 
-#pragma once
+
 
 class Star {
 

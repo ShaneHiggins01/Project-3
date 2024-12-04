@@ -13,13 +13,13 @@ struct Node {
 
 class BinaryTree {
     
-public:    
-    Node* Root;
+public:
+    Node* root;
     BinaryTree();
+    BinaryTree(Node* root);
     bool SameFloat(float, float);
     Node* BreathFirstSearch(Node*, float);
     Node* DepthFirstSearch(Node*, float);
     Node* InsertStar(Node*, Star*);
-    //void InsertStar(Node*, Star*);
     Node* InsertStarVector(Node*, vector<Star>);
 };
