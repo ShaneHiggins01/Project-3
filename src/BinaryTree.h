@@ -12,12 +12,12 @@ struct Node {
 };
 
 class BinaryTree {
-    Node* TreeRoot;
 public:
+    Node* TreeRoot;
     BinaryTree();
     bool SameFloat(float, float);
     Node* BreathFirstSearch(Node*, float);
     Node* DepthFirstSearch(Node*, float);
     Node* InsertStar(Node*, Star*);
-    Node* InsertStarVector(Node*, vector<Star>);
+    Node* InsertStarVector(vector<Star>);
 };

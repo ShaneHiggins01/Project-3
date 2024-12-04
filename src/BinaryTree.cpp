@@ -56,9 +56,9 @@ Node* BinaryTree::InsertStar(Node* root, Star* InsertedStar)
         root->left = InsertStar(root->left, InsertedStar);
     return root;
 }
-Node* BinaryTree::InsertStarVector(Node* root, vector<Star> InsertedStars)
+Node* BinaryTree::InsertStarVector(vector<Star> InsertedStars)
 {
     for(auto i : InsertedStars){
-        InsertStar(root, i*);
+        InsertStar(TreeRoot, i*);
     }
 }

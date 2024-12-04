@@ -79,7 +79,8 @@ void preGenData() {
             if(stoi(input) < 0 || stoi(input) > 1000000) {
                 invalidInput();
             } else {
-                generateData(stoi(input));
+                stars = generateData(stoi(input));
+                tree.InsertStarVector(stars);
                 selected = true;
             }
         } else {
@@ -184,7 +185,7 @@ Star preSearchBFS() {
             if(stof(input) < 0.5 || stof(input) > 8) {
                 invalidInput();
             } else {
-                resultStar = tree.BreadthFirstSearch(stof(input));
+                resultStar = tree.BreadthFirstSearch(tree.TreeRoot, stof(input));
                 selected = true;
             }
         } else {
@@ -204,7 +205,7 @@ void preSearchDFS() {
             if(stof(input) < 0.5 || stof(input) > 8) {
                 invalidInput();
             } else {
-                resultStar = tree.DepthFirstSearch(stof(input));
+                resultStar = tree.DepthFirstSearch(tree.TreeRoot, stof(input));
                 selected = true;
             }
         } else {
