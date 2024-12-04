@@ -1,3 +1,5 @@
+#pragma once
+
 struct Node {
     Star* star;
     Node* left, * right;
