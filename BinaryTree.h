@@ -19,5 +19,5 @@ public:
     Node* BreathFirstSearch(Node*, float);
     Node* DepthFirstSearch(Node*, float);
     Node* InsertStar(Node*, Star*);
-    Node* InsertStarVector(Node*, vector<Star>);
+    Node* InsertStarVector(vector<Star>);
 };
