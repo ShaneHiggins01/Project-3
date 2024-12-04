@@ -26,4 +26,5 @@ public:
     void DepthFirstSearchList(Node*, float, vector<Node*>);
     void InsertStar(Node*, Star*);
     Node* InsertStarVector(Node*, vector<Star>);
+    void PrintInorder(Node*);
 };
