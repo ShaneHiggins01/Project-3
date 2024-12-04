@@ -5,7 +5,8 @@
 #include <cmath>
 
 using namespace std;
-
+BinaryTree::BinaryTree() {
+}
 BinaryTree::BinaryTree(Node* InRoot) {
     root = InRoot;
 }
