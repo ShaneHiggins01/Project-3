@@ -57,9 +57,38 @@ Node* BinaryTree::InsertStar(Node* root, Star* InsertedStar)
         root->left = InsertStar(root->left, InsertedStar);
     return root;
 }
+
+/*
+void BinaryTree::InsertStar(Node* root, Star* InsertedStar)
+{
+    // If no root in tree, insert it here
+    if (this->Root == nullptr) 
+        this->Root = root;
+    // If new mass is greater, check to make sure right is null 
+    if (root->star->getMass() < InsertedStar->getMass()) 
+        // If right is nullptr, insert there
+        if(root->right == nullptr)            
+            root->right = new Node(InsertedStar);
+        // If right is not nullptr, call recursion
+        else
+            InsertStar(root->right, InsertedStar);
+    
+    // If new mass is less than, check to make sure left is null 
+    else if (root->star->getMass() > InsertedStar->getMass())
+        // If left is nullptr, insert there
+        if(root->left == nullptr)            
+            root->left = new Node(InsertedStar);
+        // If left is not nullptr, call recursion
+        else
+            InsertStar(root->left, InsertedStar);
+    
+    // If neither is true, masses are equal (don't insert)
+
+}
+*/
 Node* BinaryTree::InsertStarVector(Node* root, vector<Star> InsertedStars)
 {
     for(auto i : InsertedStars){
-        InsertStar(TreeRoot, &i);
+        InsertStar(this->root, &i);
     }
 }
