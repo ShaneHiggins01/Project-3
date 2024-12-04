@@ -7,7 +7,7 @@
 
 using namespace std;
 BinaryTree::BinaryTree() {
-    
+    this->root = nullptr;
 }
 
 
@@ -84,22 +84,25 @@ void BinaryTree::DepthFirstSearchList(Node* root, float mass, vector<Node*> node
 void BinaryTree::InsertStar(Node* root, Star* InsertedStar)
 {
     // If no root in tree, insert it here
-    if (this->root == nullptr) 
-        this->root = root;
-    // If new mass is greater, check to make sure right is null
-    if (root == nullptr)
-    {
+    if (this->root == nullptr) {
         root = new Node(InsertedStar);
+        this->root = root;
     }
-    if (root->star->getMass() < InsertedStar->getMass()) 
+    // If new mass is greater, check to make sure right is null
+    else if (root->star->getMass() < InsertedStar->getMass())
     {
-
         // If right is nullptr, insert there
-        if(root->right == nullptr)            
+        if(root->right == nullptr)
+        {
             root->right = new Node(InsertedStar);
+            cout << InsertedStar->getMass() << endl;
+        }
         // If right is not nullptr, call recursion
         else
+        {
             InsertStar(root->right, InsertedStar);
+            cout << InsertedStar->getMass() << endl;
+        }
     }
     // If new mass is less than or equal to, check to make sure left is null 
     else
@@ -111,8 +114,6 @@ void BinaryTree::InsertStar(Node* root, Star* InsertedStar)
         else
             InsertStar(root->left, InsertedStar);
     }
-
-
 }
 
 void BinaryTree::InsertStarVector(Node* root, vector<Star> InsertedStars)
@@ -124,9 +125,10 @@ void BinaryTree::InsertStarVector(Node* root, vector<Star> InsertedStars)
 
 void BinaryTree::PrintInorder(Node* root)
 {
+    //cout << "PrintInorder called" << endl;
     if(root != nullptr) {
-        PrintInorder(root->left);
         cout << root->star->getMass() << endl;
+        PrintInorder(root->left);
         PrintInorder(root->right);
     }
 }
