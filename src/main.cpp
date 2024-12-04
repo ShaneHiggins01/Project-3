@@ -177,8 +177,8 @@ Star preSearchBFS(BinaryTree tree) {
 
 void preSearchDFS(BinaryTree tree) {
     string input;
-    Node* resultNode;
-    Star* resultStar;
+    vector<Node*> resultNodes;
+    vector<Star*> resultStars;
     bool selected = false;
     while (!selected) {
         cout << "What star mass would you like to search for? (0.5 to 8 up to 2 decimal places)" << endl;
