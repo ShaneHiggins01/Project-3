@@ -4,7 +4,7 @@
 #include "GenerateData.cpp"
 #include "BinaryTree.h"
 #include <iostream>
-#include <bits/stdc++.h>
+//#include <bits/stdc++.h>
 #include "printStar.cpp"
 using namespace std;
 
@@ -200,8 +200,8 @@ Star preSearchBFS(BinaryTree tree) {
 
 void preSearchDFS(BinaryTree tree) {
     string input;
-    Node* resultNode;
-    Star* resultStar;
+    vector<Node*> resultNodes;
+    vector<Star*> resultStars;
     bool selected = false;
     while (!selected) {
         cout << "What star mass would you like to search for? (0.5 to 8 up to 2 decimal places)" << endl;
@@ -210,9 +210,10 @@ void preSearchDFS(BinaryTree tree) {
             if(stof(input) < 0.5 || stof(input) > 8) {
                 invalidInput();
             } else {
-                resultNode = tree.DepthFirstSearch(tree.root, stof(input));
-                resultStar = resultNode->star;
-                resultStar->printStarInfo();
+                // resultNodes vector now has all the nodes with inputted mass
+                tree.DepthFirstSearch(tree.root, stof(input), resultNodes);
+                for(auto i : resultNodes)
+                    i->star->printStarInfo();
                 selected = true;
             }
         } else {
