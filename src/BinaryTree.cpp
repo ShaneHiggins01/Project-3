@@ -116,6 +116,7 @@ void BinaryTree::InsertStar(Node* root, Star* InsertedStar)
     }
 }
 
+//BROKEN
 void BinaryTree::InsertStarVector(Node* root, vector<Star> InsertedStars)
 {
     for(auto i : InsertedStars){

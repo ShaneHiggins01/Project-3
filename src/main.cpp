@@ -52,10 +52,6 @@ void preGenData(vector<Star> &stars, BinaryTree &tree) {
                 {
                     tree.InsertStar(tree.root, &i);
                 }
-                //tree.InsertStarVector(tree.root, stars);
-                //cout << "Root Mass:" << endl;
-                //cout << tree.root->star->getMass() << endl;
-                //cout << "INSERTED"; //DELETE
                 tree.PrintInorder(tree.root);
                 selected = true;
             }
