@@ -80,7 +80,7 @@ void preGenData(vector<Star> &stars, BinaryTree &tree) {
                 invalidInput();
             } else {
                 stars = generateData(stoi(input));
-                tree.InsertStarVector(stars);
+                tree.InsertStarVector(tree.root, stars);
                 selected = true;
             }
         } else {
@@ -171,7 +171,7 @@ void preInsertCustom(vector<Star> &stars, BinaryTree &tree) {
         pair<int, int> newPosition = make_pair(newAngle1, newAngle2);
         Star newStar(newName, newMass, newPosition, newDistance);
         Star *newStarPointer = &newStar;
-        tree.InsertStar(tree.TreeRoot, newStarPointer);
+        tree.InsertStar(tree.root, newStarPointer);
         
 }
 
@@ -187,7 +187,7 @@ Star preSearchBFS(BinaryTree tree) {
             if(stof(input) < 0.5 || stof(input) > 8) {
                 invalidInput();
             } else {
-                resultNode = tree.BreadthFirstSearch(tree.TreeRoot, stof(input));
+                resultNode = tree.BreadthFirstSearch(tree.root, stof(input));
                 resultStar = resultNode->star;
                 selected = true;
             }
