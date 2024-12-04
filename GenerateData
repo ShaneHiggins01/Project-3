@@ -22,6 +22,7 @@ vector<Star> generateData(int numStars) {
         string shape;
         string name = "";
         float mass;
+        int distance;
         pair<double, double> position;
 
 
