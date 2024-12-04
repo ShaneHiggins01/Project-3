@@ -46,7 +46,7 @@ int main() {
             }
 
             else if(stoi(input) == 4) {
-                preSearchDFS();
+                preSearchDFS(tree);
             }
             else if(stoi(input) == 9) {
                 exit(0);
@@ -189,6 +189,7 @@ Star preSearchBFS(BinaryTree tree) {
             } else {
                 resultNode = tree.BreadthFirstSearch(tree.root, stof(input));
                 resultStar = resultNode->star;
+                resultStar->printStarInfo();
                 selected = true;
             }
         } else {
@@ -197,9 +198,10 @@ Star preSearchBFS(BinaryTree tree) {
     }
 }
 
-void preSearchDFS() {
+void preSearchDFS(BinaryTree tree) {
     string input;
-    Star resultStar;
+    Node* resultNode;
+    Star* resultStar;
     bool selected = false;
     while (!selected) {
         cout << "What star mass would you like to search for? (0.5 to 8 up to 2 decimal places)" << endl;
@@ -208,7 +210,9 @@ void preSearchDFS() {
             if(stof(input) < 0.5 || stof(input) > 8) {
                 invalidInput();
             } else {
-                resultStar = tree.DepthFirstSearch(tree.TreeRoot, stof(input));
+                resultNode = tree.DepthFirstSearch(tree.root, stof(input));
+                resultStar = resultNode->star;
+                resultStar->printStarInfo();
                 selected = true;
             }
         } else {
