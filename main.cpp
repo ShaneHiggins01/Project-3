@@ -79,7 +79,8 @@ void preGenData() {
             if(stoi(input) < 0 || stoi(input) > 1000000) {
                 invalidInput();
             } else {
-                generateData(stoi(input));
+                stars = generateData(stoi(input));
+                tree.InsertStarVector(stars);
                 selected = true;
             }
         } else {
