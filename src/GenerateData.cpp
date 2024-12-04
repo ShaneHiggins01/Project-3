@@ -1,9 +1,8 @@
-#pragma once
-
 #include "Star.h"
 #include <vector>
 #include <string>
 #include <cstdlib>
+#include <time.h>
 using namespace std;
 
 
@@ -17,6 +16,7 @@ vector<string> shapes = {"Flat", "Round", "Square"};
 
 vector<Star> generateData(int numStars) {
     vector<Star> stars;
+    srand(time(NULL));
     for(int i = 0; i < numStars; i++) {
         int tmp = 0;
         string color;
@@ -51,7 +51,9 @@ vector<Star> generateData(int numStars) {
         angle1 = (rand() % 241)/10; //0 to 24 1 decimal place
         angle2 = (rand() % 1800)/10 - 90; //-90 to 90 1 decimal place
         position = make_pair(angle1, angle2);
-
+        Star newStar(name, mass, position, distance);
+        stars.push_back(newStar);
     }
+    return stars;
 
 }

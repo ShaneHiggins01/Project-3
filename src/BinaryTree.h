@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Star.h"
+
 struct Node {
     Star* star;
     Node* left, * right;
@@ -19,8 +21,10 @@ public:
     BinaryTree(Node* root);
     bool SameFloat(float, float);
     Node* BreadthFirstSearch(Node*, float);
-    //Node* DepthFirstSearch(Node*, float);
-    void DepthFirstSearch(Node*, float, vector<Node*>);
+    Node* DepthFirstSearch(Node*, float);
+    void BreadthFirstSearchList(Node*, float, vector<Node*>);
+    void DepthFirstSearchList(Node*, float, vector<Node*>);
     void InsertStar(Node*, Star*);
-    Node* InsertStarVector(Node*, vector<Star>);
+    void InsertStarVector(Node*, vector<Star>);
+    void PrintInorder(Node*);
 };
