@@ -72,10 +72,10 @@ void preGenData() {
     string input;
     bool selected = false;
     while(!selected) {
-        cout << "How many Stars would you like to generate (up to 100,000)" << endl;
+        cout << "How many Stars would you like to generate (up to 1,000,000)" << endl;
         cin >> input;
         if(checkIntInput(input)) {
-            if(stoi(input) < 0 || stoi(input) > 100000) {
+            if(stoi(input) < 0 || stoi(input) > 1000000) {
                 invalidInput();
             } else {
                 generateData(stoi(input));
