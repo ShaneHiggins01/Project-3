@@ -170,7 +170,7 @@ void preInsertCustom() {
         }
         pair<int, int> newPosition = make_pair(newAngle1, newAngle2);
         Star newStar(newName, newMass, newPosition, newDistance);
-        //insert newStar
+        tree.InsertStar(tree.TreeRoot, Star);
         
 }
 
