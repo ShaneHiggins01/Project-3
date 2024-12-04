@@ -41,8 +41,8 @@ void preGenData(vector<Star> &stars, BinaryTree &tree) {
     bool selected = false;
     while(!selected) {
         cout << "How many Stars would you like to generate (up to 1,000,000)" << endl;
-        //cin >> input;
-        input = "10"; //DELETE
+        cin >> input;
+        //input = "10"; //DELETE
         if(checkIntInput(input)) {
             if(stoi(input) < 0 || stoi(input) > 10000000) {
                 invalidInput();
@@ -222,8 +222,8 @@ int main() {
         cout << "4. Search for specified mass with DFS" << endl;
         cout << "9. Exit Program" << endl;
 
-        //cin >> input;
-        input = "1"; //DELETE
+        cin >> input;
+        //input = "1"; //DELETE
         if(checkIntInput(input)) {
             if(stoi(input) == 1) {
                 preGenData(stars, tree);

@@ -124,7 +124,9 @@ void BinaryTree::InsertStarVector(Node* root, vector<Star> InsertedStars)
 
 void BinaryTree::PrintInorder(Node* root)
 {
-    PrintInorder(root->left);
-    cout << root->star->getMass() << endl;
-    PrintInorder(root->right);
+    if(root != nullptr) {
+        PrintInorder(root->left);
+        cout << root->star->getMass() << endl;
+        PrintInorder(root->right);
+    }
 }
