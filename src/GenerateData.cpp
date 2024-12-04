@@ -15,11 +15,11 @@ vector<string> shapes = {"Flat", "Round", "Square"};
 
 
 
-vector<Star> generateData(int numStars) {
+vector<Star> generateData(int numStars, int seed) {
     vector<Star> stars;
     
     for(int i = 0; i < numStars; i++) {
-        srand(time(0));
+        srand(seed + i);
         int tmp = 0;
         string color;
         string size;
