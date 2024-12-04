@@ -5,9 +5,8 @@
 #include <cmath>
 
 using namespace std;
-
-BinaryTree::BinaryTree(Node* InRoot) {
-    root = InRoot;
+BinaryTree::BinaryTree() {
+    
 }
 
 bool BinaryTree::SameFloat(float f1, float f2)
