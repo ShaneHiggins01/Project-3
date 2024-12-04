@@ -8,14 +8,14 @@ int main() {
     
     vector<Star> stars;
     stars = generateData(1);
-    bool selected = false;
+    bool quit = false;
 
     cout << "Hello, and welcome to Star Searcher." << endl;
     cout << "Please select an option below" << endl;
     cout << "-------------------" << endl;
 
     string input;
-    while (!selected){
+    while (!quit){
         
         cout << "1. Generate Star Dataset" << endl;
         cout << "2. Insert Custom Star" << endl;
@@ -26,22 +26,21 @@ int main() {
         if(checkInput(input)) {
             if(stoi(input) == 1) {
                 preGenData();
-                selected != selected;
             } 
 
             else if (stoi(input) == 2) {
                 preInsertCustom();
-                selected != selected;
             }
 
             else if (stoi(input) == 3) {
                 preSearchBFS();
-                selected != selected;
             }
 
             else if(stoi(input) == 4) {
                 preSearchDFS();
-                selected != selected;
+            }
+            else if(stoi(input) == 9) {
+                exit(0);
             }
 
             else {
@@ -58,7 +57,7 @@ int main() {
 }
 
 void invalidInput() {
-    cout << "Invalid Input" << endl;
+    cout << "Invalid input" << endl;
 }
 
 void preGenData() {
@@ -70,7 +69,12 @@ void preGenData() {
         if(checkInput(input)) {
             if(stoi(input) < 0 || stoi(input) > 100000) {
                 invalidInput();
-            } 
+            } else {
+                generateData(stoi(input));
+                selected = true;
+            }
+        } else {
+            invalidInput();
         }
     }
     
@@ -78,7 +82,17 @@ void preGenData() {
 }
 
 void preInsertCustom() {
+    string input;
+    bool selected = false;
+    string newName;
+    float newMass;
+    
 
+    while(!selected) {
+        cout << "Name your star!" << endl;
+        cin >> input;
+
+    }
 }
 
 void preSearchBFS() {
