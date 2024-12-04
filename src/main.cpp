@@ -42,11 +42,15 @@ int main() {
             }
 
             else if (stoi(input) == 3) {
+                
                 preSearchBFS(tree);
+                
             }
 
             else if(stoi(input) == 4) {
+                
                 preSearchDFS(tree);
+                
             }
             else if(stoi(input) == 9) {
                 exit(0);
@@ -187,7 +191,12 @@ Star preSearchBFS(BinaryTree tree) {
             if(stof(input) < 0.5 || stof(input) > 8) {
                 invalidInput();
             } else {
+                auto StartTime = chrono::high_resolution_clock::now();
                 resultNode = tree.BreadthFirstSearch(tree.root, stof(input));
+                auto EndTime = chrono::high_resolution_clock::now();
+                auto TimeTaken = std::chrono::duration_cast<std::chrono::milliseconds>(EndTime - StartTime); //This gives timetaken in milliseconds
+                cout << "Time taken to search: " << timetaken.count() << " miliseconds." << endl;
+                
                 resultStar = resultNode->star;
                 resultStar->printStarInfo();
                 selected = true;
@@ -210,7 +219,12 @@ void preSearchDFS(BinaryTree tree) {
             if(stof(input) < 0.5 || stof(input) > 8) {
                 invalidInput();
             } else {
+                auto StartTime = chrono::high_resolution_clock::now();
                 resultNode = tree.DepthFirstSearch(tree.root, stof(input));
+                auto EndTime = chrono::high_resolution_clock::now();
+                auto TimeTaken = std::chrono::duration_cast<std::chrono::milliseconds>(EndTime - StartTime); //This gives timetaken in milliseconds
+                cout << "Time taken to search: " << timetaken.count() << " miliseconds." << endl;
+                
                 resultStar = resultNode->star;
                 resultStar->printStarInfo();
                 selected = true;
