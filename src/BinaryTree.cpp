@@ -15,7 +15,6 @@ bool BinaryTree::SameFloat(float f1, float f2)
     return (abs(f1 - f2) < 0.0001); //using < 0.0001 for floating point math
 }
 
-//Don't know if this works yet
 Node* BinaryTree::BreadthFirstSearch(Node* root, float mass) //float mass is what we are looking for
 {
     if (root == nullptr)
@@ -35,8 +34,27 @@ Node* BinaryTree::BreadthFirstSearch(Node* root, float mass) //float mass is wha
     return;
 }
 
-/*
-//Don't know if this works yet
+// An empty vector<Node*> list will be passed in, then push when found
+void BinaryTree::BreadthFirstSearchList(Node* root, float mass, vector<Node*> nodeList)
+{
+    if (root != nullptr) 
+    {
+        queue<Node*> q;
+        q.push(root);
+        while (!q.empty()) {
+            Node* node = q.front();
+            q.pop(); 
+            if(SameFloat(root->star->getMass(), mass)) //If the mass is what we're looking for
+                nodeList.push_back(root);
+            if (node->left != nullptr)
+                q.push(node->left);
+            if (node->right != nullptr)
+                q.push(node->right);
+        }
+    }
+}
+
+
 Node* BinaryTree::DepthFirstSearch(Node* root, float mass) //Literally just Inorder
 {
     if (root == nullptr) 
@@ -47,22 +65,20 @@ Node* BinaryTree::DepthFirstSearch(Node* root, float mass) //Literally just Inor
     DepthFirstSearch(root->right, mass);
     return;
 }
-*/
 
 // An empty vector<Node*> list will be passed in, then push when found
-void BinaryTree::DepthFirstSearch(Node* root, float mass, vector<Node*> nodeList) //Literally just Inorder
+void BinaryTree::DepthFirstSearchList(Node* root, float mass, vector<Node*> nodeList)
 {
     // Perform inOrder traversal
     if (root != nullptr) 
     {
-        DepthFirstSearch(root->left, mass, nodeList);
+        DepthFirstSearchList(root->left, mass, nodeList);
         if(SameFloat(root->star->getMass(), mass))
             nodeList.push_back(root);
-        DepthFirstSearch(root->right, mass, nodeList);
+        DepthFirstSearchList(root->right, mass, nodeList);
         
     }
 }
-
 
 void BinaryTree::InsertStar(Node* root, Star* InsertedStar)
 {
