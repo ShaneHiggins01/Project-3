@@ -9,6 +9,11 @@ Star::Star(string newName, float newMass, pair<double, double> newPosition, int 
     distance = newDistance;
 }
 
+Star::Star() {
+
+}
+
+
 string Star::getName() {
     return name;
 }

@@ -8,13 +8,13 @@
 #include "printStar.cpp"
 using namespace std;
 
-#pragma once
-
 
 int main() {
     
     vector<Star> stars;
     stars = generateData(1);
+    BinaryTree() tree;
+
     bool quit = false;
 
     printStar2();
@@ -168,8 +168,9 @@ void preInsertCustom() {
         }
 }
 
-void preSearchBFS() {
+Star preSearchBFS() {
     string input;
+    Star resultStar;
     bool selected = false;
     while (!selected) {
         cout << "What star mass would you like to search for? (0.5 to 8 up to 2 decimal places)" << endl;
@@ -178,7 +179,7 @@ void preSearchBFS() {
             if(stof(input) < 0.5 || stof(input) > 8) {
                 invalidInput();
             } else {
-                
+                resultStar = tree.BreadthFirstSearch(stof(input));
             }
         } else {
             invalidInput();
