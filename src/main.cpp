@@ -44,7 +44,7 @@ void preGenData(vector<Star> &stars, BinaryTree &tree) {
         //cin >> input;
         input = "10"; //DELETE
         if(checkIntInput(input)) {
-            if(stoi(input) < 0 || stoi(input) > 1000000) {
+            if(stoi(input) < 0 || stoi(input) > 10000000) {
                 invalidInput();
             } else {
                 stars = generateData(stoi(input));
@@ -204,7 +204,6 @@ void preSearchDFS(BinaryTree tree) {
 int main() {
     
     vector<Star> stars;
-    stars = generateData(1);
     BinaryTree tree;
 
     bool quit = false;
