@@ -18,7 +18,7 @@ bool BinaryTree::SameFloat(float f1, float f2)
 Node* BinaryTree::BreadthFirstSearch(Node* root, float mass) //float mass is what we are looking for
 {
     if (root == nullptr)
-        return;
+        return nullptr;
     queue<Node*> q;
     q.push(root);
     while (!q.empty()) {
@@ -31,7 +31,7 @@ Node* BinaryTree::BreadthFirstSearch(Node* root, float mass) //float mass is wha
         if (node->right != nullptr)
             q.push(node->right);
     }
-    return;
+    return nullptr;
 }
 
 // An empty vector<Node*> list will be passed in, then push when found
@@ -63,7 +63,7 @@ Node* BinaryTree::DepthFirstSearch(Node* root, float mass) //Literally just Inor
     if(SameFloat(root->star->getMass(), mass))
         return root;
     DepthFirstSearch(root->right, mass);
-    return;
+    return nullptr;
 }
 
 // An empty vector<Node*> list will be passed in, then push when found
