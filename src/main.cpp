@@ -13,7 +13,7 @@ int main() {
     
     vector<Star> stars;
     stars = generateData(1);
-    BinaryTree() tree;
+    BinaryTree tree;
 
     bool quit = false;
 
@@ -38,11 +38,11 @@ int main() {
             } 
 
             else if (stoi(input) == 2) {
-                preInsertCustom();
+                preInsertCustom(stars, tree);
             }
 
             else if (stoi(input) == 3) {
-                preSearchBFS();
+                preSearchBFS(tree);
             }
 
             else if(stoi(input) == 4) {
@@ -69,7 +69,7 @@ void invalidInput() {
     cout << "Invalid input" << endl;
 }
 
-void preGenData() {
+void preGenData(vector<Star> &stars, BinaryTree &tree) {
     string input;
     bool selected = false;
     while(!selected) {
@@ -91,7 +91,7 @@ void preGenData() {
 
 }
 
-void preInsertCustom() {
+void preInsertCustom(vector<Star> &stars, BinaryTree &tree) {
     string input;
     bool selected = false;
     string newName;
@@ -174,7 +174,7 @@ void preInsertCustom() {
         
 }
 
-Star preSearchBFS() {
+Star preSearchBFS(BinaryTree tree) {
     string input;
     Star resultStar;
     bool selected = false;
