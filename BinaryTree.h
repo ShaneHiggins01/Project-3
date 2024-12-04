@@ -13,6 +13,7 @@ struct Node {
 
 class BinaryTree {
 public:
+    Node* Root;
     BinaryTree();
     bool SameFloat(float, float);
     Node* BreathFirstSearch(Node*, float);
