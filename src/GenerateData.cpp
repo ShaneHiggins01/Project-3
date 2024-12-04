@@ -16,8 +16,9 @@ vector<string> shapes = {"Flat", "Round", "Square"};
 
 vector<Star> generateData(int numStars) {
     vector<Star> stars;
-    srand(time(NULL));
+    
     for(int i = 0; i < numStars; i++) {
+        srand(time(NULL));
         int tmp = 0;
         string color;
         string size;
