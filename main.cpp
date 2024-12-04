@@ -10,6 +10,7 @@ int main() {
     stars = generateData(1);
     bool quit = false;
 
+    printStar2();
     cout << "Hello, and welcome to Star Searcher." << endl;
     cout << "Please select an option below" << endl;
     cout << "-------------------" << endl;
