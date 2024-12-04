@@ -1,3 +1,5 @@
+#pragma once
+
 #include "BinaryTree.h"
 #include "Star.h"
 #include <cmath>
@@ -9,7 +11,7 @@ BinaryTree::BinaryTree() {
 
 bool BinaryTree::SameFloat(float f1, float f2)
 {
-    return (abs(f1 - f2) < 0.0001) //using < 0.0001 for floating point math
+    return (abs(f1 - f2) < 0.0001); //using < 0.0001 for floating point math
 }
 
 //Don't know if this works yet
@@ -37,24 +39,21 @@ Node* BinaryTree::DepthFirstSearch(Node* root, float mass) //Literally just Inor
 {
     if (root == nullptr) 
         return;
-    DepthFirstSearch(root->left);
+    DepthFirstSearch(root->left, mass);
     if(SameFloat(root->star->getMass(), mass))
-        return node;
-    DepthFirstSearch(root->right);
+        return root;
+    DepthFirstSearch(root->right, mass);
     return;
 }
 
 Node* BinaryTree::InsertStar(Node* root, Star* InsertedStar)
 {
-    if (root == nullptr)
-        return;
-    if (root->star->getMass() == InsertedStar->getMass)
-        return root; //If it already exists
-    
-    if (root->star->getMass() < InsertedStar->getMass)
-        root->right = insert(root->right, InsertedStar);
+    if (root == nullptr) //Insert it in
+        return new Node(InsertedStar);
+    if (root->star->getMass() < InsertedStar->getMass())
+        root->right = InsertStar(root->right, InsertedStar);
     else
-        root->left = insert(root->left, InsertedStar);
+        root->left = InsertStar(root->left, InsertedStar);
     return root;
 }
 Node* BinaryTree::InsertStarVector(Node* root, vector<Star> InsertedStars)

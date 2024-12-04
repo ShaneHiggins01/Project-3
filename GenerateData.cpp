@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Star.h"
 #include <vector>
 #include <string>

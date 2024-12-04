@@ -1,3 +1,5 @@
+#pragma once
+
 struct Node {
     Star* star;
     Node* left, * right;
@@ -10,7 +12,9 @@ struct Node {
 };
 
 class BinaryTree {
+    Node* root;
 public:
+    Node* Root;
     BinaryTree();
     bool SameFloat(float, float);
     Node* BreathFirstSearch(Node*, float);
