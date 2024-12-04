@@ -12,10 +12,9 @@ struct Node {
 };
 
 class BinaryTree {
-    Node* root;
+    Node* TreeRoot;
 public:
     BinaryTree();
-    BinaryTree(Node* root);
     bool SameFloat(float, float);
     Node* BreathFirstSearch(Node*, float);
     Node* DepthFirstSearch(Node*, float);
