@@ -35,16 +35,32 @@ Node* BinaryTree::BreadthFirstSearch(Node* root, float mass) //float mass is wha
     return;
 }
 
+/*
 //Don't know if this works yet
 Node* BinaryTree::DepthFirstSearch(Node* root, float mass) //Literally just Inorder
 {
     if (root == nullptr) 
-        return;
+        return root;
     DepthFirstSearch(root->left, mass);
     if(SameFloat(root->star->getMass(), mass))
         return root;
     DepthFirstSearch(root->right, mass);
     return;
+}
+*/
+
+// An empty vector<Node*> list will be passed in, then push when found
+void BinaryTree::DepthFirstSearch(Node* root, float mass, vector<Node*> nodeList) //Literally just Inorder
+{
+    // Perform inOrder traversal
+    if (root != nullptr) 
+    {
+        DepthFirstSearch(root->left, mass, nodeList);
+        if(SameFloat(root->star->getMass(), mass))
+            nodeList.push_back(root);
+        DepthFirstSearch(root->right, mass, nodeList);
+        
+    }
 }
 
 
@@ -55,23 +71,26 @@ void BinaryTree::InsertStar(Node* root, Star* InsertedStar)
         this->root = root;
     // If new mass is greater, check to make sure right is null 
     if (root->star->getMass() < InsertedStar->getMass()) 
+    {
+
         // If right is nullptr, insert there
         if(root->right == nullptr)            
             root->right = new Node(InsertedStar);
         // If right is not nullptr, call recursion
         else
             InsertStar(root->right, InsertedStar);
-    
-    // If new mass is less than, check to make sure left is null 
-    else if (root->star->getMass() > InsertedStar->getMass())
+    }
+    // If new mass is less than or equal to, check to make sure left is null 
+    else
+    {
         // If left is nullptr, insert there
         if(root->left == nullptr)            
             root->left = new Node(InsertedStar);
         // If left is not nullptr, call recursion
         else
             InsertStar(root->left, InsertedStar);
-    
-    // If neither is true, masses are equal (don't insert)
+    }
+
 
 }
 

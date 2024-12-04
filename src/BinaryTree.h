@@ -19,7 +19,8 @@ public:
     BinaryTree(Node* root);
     bool SameFloat(float, float);
     Node* BreadthFirstSearch(Node*, float);
-    Node* DepthFirstSearch(Node*, float);
+    //Node* DepthFirstSearch(Node*, float);
+    void DepthFirstSearch(Node*, float, vector<Node*>);
     void InsertStar(Node*, Star*);
     Node* InsertStarVector(Node*, vector<Star>);
 };
