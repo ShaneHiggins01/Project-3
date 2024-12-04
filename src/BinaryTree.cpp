@@ -16,6 +16,7 @@ bool BinaryTree::SameFloat(float f1, float f2)
     return (abs(f1 - f2) < 0.0001); //using < 0.0001 for floating point math
 }
 
+/*
 Node* BinaryTree::BreadthFirstSearch(Node* root, float mass) //float mass is what we are looking for
 {
     if (root == nullptr)
@@ -34,6 +35,7 @@ Node* BinaryTree::BreadthFirstSearch(Node* root, float mass) //float mass is wha
     }
     return nullptr;
 }
+*/
 
 // An empty vector<Node*> list will be passed in, then push when found
 void BinaryTree::BreadthFirstSearchList(Node* root, float mass, vector<Node*> nodeList)
