@@ -34,7 +34,7 @@ int main() {
         cin >> input;
         if(checkIntInput(input)) {
             if(stoi(input) == 1) {
-                preGenData();
+                preGenData(stars, tree);
             } 
 
             else if (stoi(input) == 2) {
@@ -170,13 +170,15 @@ void preInsertCustom(vector<Star> &stars, BinaryTree &tree) {
         }
         pair<int, int> newPosition = make_pair(newAngle1, newAngle2);
         Star newStar(newName, newMass, newPosition, newDistance);
-        tree.InsertStar(tree.TreeRoot, Star);
+        Star *newStarPointer = &newStar;
+        tree.InsertStar(tree.TreeRoot, newStarPointer);
         
 }
 
 Star preSearchBFS(BinaryTree tree) {
     string input;
-    Star resultStar;
+    Node* resultNode;
+    Star* resultStar;
     bool selected = false;
     while (!selected) {
         cout << "What star mass would you like to search for? (0.5 to 8 up to 2 decimal places)" << endl;
@@ -185,7 +187,8 @@ Star preSearchBFS(BinaryTree tree) {
             if(stof(input) < 0.5 || stof(input) > 8) {
                 invalidInput();
             } else {
-                resultStar = tree.BreadthFirstSearch(tree.TreeRoot, stof(input));
+                resultNode = tree.BreadthFirstSearch(tree.TreeRoot, stof(input));
+                resultStar = resultNode->star;
                 selected = true;
             }
         } else {

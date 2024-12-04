@@ -19,4 +19,5 @@ class Star {
     Star();
     string getName();
     float getMass();
+    void printStarInfo();
 };
