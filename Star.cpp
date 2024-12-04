@@ -10,3 +10,7 @@ Star::Star(string newName, float newMass, pair<double, double> newPosition, int 
 string Star::getName() {
     return name;
 }
+
+float Star::getMass() {
+    return mass;
+}

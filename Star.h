@@ -12,4 +12,5 @@ class Star {
     public:
     Star(string name, float mass, pair<double, double> position, int distance);
     string getName();
+    float getMass();
 };
