@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Star.h"
+
 struct Node {
     Star* star;
     Node* left, * right;
