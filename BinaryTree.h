@@ -14,6 +14,7 @@ struct Node {
 class BinaryTree {
     Node* root;
 public:
+    BinaryTree();
     BinaryTree(Node* root);
     bool SameFloat(float, float);
     Node* BreathFirstSearch(Node*, float);
