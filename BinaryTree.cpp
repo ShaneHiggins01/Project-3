@@ -6,7 +6,8 @@
 
 using namespace std;
 
-BinaryTree::BinaryTree() {
+BinaryTree::BinaryTree(Node* InRoot) {
+    root = InRoot;
 }
 
 bool BinaryTree::SameFloat(float f1, float f2)
