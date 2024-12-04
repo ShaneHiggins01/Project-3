@@ -51,12 +51,13 @@ void preGenData(vector<Star> &stars, BinaryTree &tree) {
             if(stoi(input) < 0 || stoi(input) > 10000000) {
                 invalidInput();
             } else {
-                stars = generateData(stoi(input), 5);
+                stars = generateData(stoi(input));
                 for(auto i : stars)
                 {
-                    tree.InsertStar(tree.root, &i);
+                    tree.InsertStar(tree.root, i);
                 }
-                tree.PrintInorder(tree.root);
+                //cout << "Print Preorder" << endl;
+                //tree.PrintInorder(tree.root);
                 selected = true;
             }
         } else {
@@ -146,8 +147,8 @@ void preInsertCustom(vector<Star> &stars, BinaryTree &tree) {
     }
     pair<int, int> newPosition = make_pair(newAngle1, newAngle2);
     Star newStar(newName, newMass, newPosition, newDistance);
-    Star *newStarPointer = &newStar;
-    tree.InsertStar(tree.root, newStarPointer);
+    //Star *newStarPointer = &newStar;
+    //tree.InsertStar(tree.root, newStarPointer);
 
 }
 
@@ -164,12 +165,12 @@ Star preSearchBFS(BinaryTree tree) {
                 invalidInput();
             } else {
                 auto StartTime = chrono::high_resolution_clock::now();
-                resultNode = tree.BreadthFirstSearch(tree.root, stof(input));
+                //resultNode = tree.BreadthFirstSearch(tree.root, stof(input));
                 auto EndTime = chrono::high_resolution_clock::now();
                 auto TimeTaken = std::chrono::duration_cast<std::chrono::milliseconds>(EndTime - StartTime); //This gives timetaken in milliseconds
                 cout << "Time taken to search: " << TimeTaken.count() << " miliseconds." << endl;
 
-                resultStar = resultNode->star;
+                //resultStar = resultNode->star;
                 resultStar->printStarInfo();
                 selected = true;
             }
@@ -177,6 +178,7 @@ Star preSearchBFS(BinaryTree tree) {
             invalidInput();
         }
     }
+    return *resultStar;
 }
 
 void preSearchDFS(BinaryTree tree) {

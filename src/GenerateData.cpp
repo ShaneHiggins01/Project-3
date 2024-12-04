@@ -15,7 +15,7 @@ vector<string> shapes = {"Flat", "Round", "Square"};
 
 
 
-vector<Star> generateData(int numStars, int seed) {
+vector<Star> generateData(int numStars) {
     vector<Star> stars;
     
     for(int i = 0; i < numStars; i++) {
