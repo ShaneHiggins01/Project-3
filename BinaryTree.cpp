@@ -1,3 +1,5 @@
+#include "Star.h"
+
 class BinaryTree {
 public:
     Star* data;
