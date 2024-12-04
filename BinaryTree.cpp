@@ -1,3 +1,5 @@
+#pragma once
+
 #include "BinaryTree.h"
 #include "Star.h"
 #include <cmath>
