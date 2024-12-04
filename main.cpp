@@ -29,6 +29,7 @@ int main() {
         cout << "2. Insert Custom Star" << endl;
         cout << "3. Search for specified mass with BFS" << endl;
         cout << "4. Search for specified mass with DFS" << endl;
+        cout << "9. Exit Program" << endl;
 
         cin >> input;
         if(checkIntInput(input)) {
@@ -166,6 +167,10 @@ void preInsertCustom() {
                 invalidInput();
             }
         }
+        pair<int, int> newPosition = make_pair(newAngle1, newAngle2);
+        Star newStar(newName, newMass, newPosition, newDistance);
+        //insert newStar
+        
 }
 
 Star preSearchBFS() {
@@ -180,6 +185,7 @@ Star preSearchBFS() {
                 invalidInput();
             } else {
                 resultStar = tree.BreadthFirstSearch(stof(input));
+                selected = true;
             }
         } else {
             invalidInput();
@@ -188,7 +194,23 @@ Star preSearchBFS() {
 }
 
 void preSearchDFS() {
-
+    string input;
+    Star resultStar;
+    bool selected = false;
+    while (!selected) {
+        cout << "What star mass would you like to search for? (0.5 to 8 up to 2 decimal places)" << endl;
+        cin >> input;
+        if(checkFloatInput(input)) {
+            if(stof(input) < 0.5 || stof(input) > 8) {
+                invalidInput();
+            } else {
+                resultStar = tree.DepthFirstSearch(stof(input));
+                selected = true;
+            }
+        } else {
+            invalidInput();
+        }
+    }
 }
 
 bool checkIntInput(string input) {
