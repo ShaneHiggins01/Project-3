@@ -4,7 +4,7 @@
 #include "GenerateData.cpp"
 #include "BinaryTree.h"
 #include <iostream>
-//#include <bits/stdc++.h>
+#include <bits/stdc++.h>
 #include "printStar.cpp"
 using namespace std;
 
