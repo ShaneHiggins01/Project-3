@@ -1,4 +1,5 @@
 #include <string>
+using namespace std;
 
 class Star {
 
@@ -9,7 +10,6 @@ class Star {
     int distance; //5-100 in lightyears
 
     public:
-    Star(string name, float mass, pair<double, double> position, int distance)
-
-
-}
+    Star(string name, float mass, pair<double, double> position, int distance);
+    string getName();
+};
