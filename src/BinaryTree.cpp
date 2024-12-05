@@ -38,9 +38,9 @@ Node* BinaryTree::BreadthFirstSearch(Node* root, float mass) //float mass is wha
 */
 
 // An empty vector<Node*> list will be passed in, then push when found
-void BinaryTree::BreadthFirstSearchList(Node* root, float mass, vector<Node*> nodeList)
+void BinaryTree::BreadthFirstSearchList(Node* root, float mass, vector<Node*> &nodeList)
 {
-    if (root != nullptr) 
+    if (root != nullptr)
     {
         queue<Node*> q;
         q.push(root);

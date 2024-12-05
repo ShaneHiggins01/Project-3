@@ -22,7 +22,7 @@ public:
     bool SameFloat(float, float);
     Node* BreadthFirstSearch(Node*, float);
     Node* DepthFirstSearch(Node*, float);
-    void BreadthFirstSearchList(Node*, float, vector<Node*>);
+    void BreadthFirstSearchList(Node*, float, vector<Node*>&);
     void DepthFirstSearchList(Node*, float, vector<Node*>);
     void InsertStar(Node*, Star);
     void InsertStarVector(Node*, vector<Star>);
