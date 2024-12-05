@@ -47,8 +47,8 @@ void BinaryTree::BreadthFirstSearchList(Node* root, float mass, vector<Node*> &n
         while (!q.empty()) {
             Node* node = q.front();
             q.pop(); 
-            if(SameFloat(root->star.getMass(), mass)) //If the mass is what we're looking for
-                nodeList.push_back(root);
+            if(SameFloat(node->star.getMass(), mass)) //If the mass is what we're looking for
+                nodeList.push_back(node);
             if (node->left != nullptr)
                 q.push(node->left);
             if (node->right != nullptr)
@@ -71,7 +71,7 @@ Node* BinaryTree::DepthFirstSearch(Node* root, float mass) //Literally just Inor
 */
 
 // An empty vector<Node*> list will be passed in, then push when found
-void BinaryTree::DepthFirstSearchList(Node* root, float mass, vector<Node*> nodeList)
+void BinaryTree::DepthFirstSearchList(Node* root, float mass, vector<Node*> &nodeList)
 {
     // Perform inOrder traversal
     if (root != nullptr) 

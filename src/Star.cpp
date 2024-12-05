@@ -24,8 +24,8 @@ float Star::getMass() {
 }
 
 void Star::printStarInfo() {
-    cout << "Star Name: " << name << endl;
+    cout << "\nStar Name: " << name << endl;
     cout << "Star Mass: " << mass << endl;
     cout << "Star Position: " << position.first << " " << position.second << endl;
-    cout << "Star Distance: " << distance << endl;
+    cout << "Star Distance: " << distance << endl << endl;
 }

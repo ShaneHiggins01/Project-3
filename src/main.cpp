@@ -29,7 +29,7 @@ bool checkFloatInput(string input) {
         return true;
     } else {
         for(int i = 0; i < input.size(); i++) {
-            if(!isdigit(input[i]) && input[i] != '.') {
+            if(!isdigit(input[i]) && input[i] != '.' && input[i] != '-') {
                 return false;
             }
         }
@@ -117,7 +117,7 @@ void preInsertCustom(vector<Star> &stars, BinaryTree &tree) {
         cout << "What is the declination of your star! (-90.0 to 90.0 1 decimal place)" << endl;
         cin >> input;
         if(checkFloatInput(input)) {
-            if(stod(input) < -90 || stod(input) > 90) {
+            if(abs(stod(input)) > 90) {
                 invalidInput();
             } else {
                 newAngle2 = stod(input);
@@ -187,7 +187,6 @@ void preSearchBFS(BinaryTree tree) {
 void preSearchDFS(BinaryTree tree) {
     string input;
     vector<Node*> resultNodes;
-    vector<Star*> resultStars;
     bool selected = false;
     while (!selected) {
         cout << "What star mass would you like to search for? (0.5 to 8 up to 2 decimal places)" << endl;
@@ -200,10 +199,17 @@ void preSearchDFS(BinaryTree tree) {
                 tree.DepthFirstSearchList(tree.root, stof(input), resultNodes);
                 auto EndTime = chrono::high_resolution_clock::now();
                 auto TimeTaken = std::chrono::duration_cast<std::chrono::milliseconds>(EndTime - StartTime); //This gives timetaken in milliseconds
-                cout << "Time taken to search: " << TimeTaken.count() << " miliseconds." << endl;
+                cout << "Time taken to search: " << TimeTaken.count() << " milliseconds." << endl;
 
-                //resultStars = resultNodes->star;
-                //resultStars->printStarInfo();
+                if(resultNodes.size() == 0)
+                    cout << "There were no stars that match this mass!\n\n";
+                else
+                {
+                    for(auto i : resultNodes)
+                    {
+                        i->star.printStarInfo();
+                    }
+                }
                 selected = true;
             }
         } else {
